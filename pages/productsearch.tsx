@@ -10,7 +10,7 @@ const Productsearch = (props) => {
     const getProdsearch = async (event: any) => {
         event.preventDefault();                 
         setMessage("please wait .");
-        let response = await fetch(`http://localhost:3000/api/product/search?search=${searchkey}`);
+        let response = await fetch(`https://nextjs-spa-01.vercel.app/api/product/search?search=${searchkey}`);
         let data = await response.json();     
         if (data.statuscode === 200) {
           setProdsearch(data.product);

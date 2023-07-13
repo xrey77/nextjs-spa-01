@@ -8,7 +8,7 @@ import Link from 'next/link';
     let [totpage, setTotpage] = useState(null);
 
     const fetchCatalog = async (pg: any) => {
-      await fetch(`http://localhost:3000/api/product/list?page=${page}`)
+      await fetch(`https://nextjs-spa-01.vercel.app/api/product/list?page=${page}`)
       .then((response) => response.json())
       .then((json) => {
         setProds(json.products);
@@ -17,7 +17,7 @@ import Link from 'next/link';
     }
 
     useEffect(() => {
-      fetch(`http://localhost:3000/api/product/list?page=${page}`)
+      fetch(`https://nextjs-spa-01.vercel.app/api/product/list?page=${page}`)
       .then((response) => response.json())
       .then((json) => {
         setProds(json.products);
