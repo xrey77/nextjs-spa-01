@@ -52,7 +52,7 @@ export default async function signup(req: NextApiRequest, res: NextApiResponse) 
             password: passwd,
             secretkey: secret.base32,
             qrcodeurl: "",
-            profilepic: "https://nextjs-spa-01-2ahu2tubm-xrey77.vercel.app/users/pix.jpg"
+            profilepic: "/users/pix.jpg"
         }
     });
     
