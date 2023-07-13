@@ -8,22 +8,15 @@ const Productlist = (props) => {
     let [totpage, setTotpage] = useState(null);
 
     const fetchProducts = async (pg: any) => {
-       await fetch(`/api/product/list?page=${page}`)
-       .then((response) => response?.json())
-       .then((json) => {
-          setProducts(json.products);
-          setTotpage(json.totpages);
-          setPage(json.page); 
-       });
+       const response = await fetch(`/api/product/list?page=${page}`);
+       let data = await response.json();
+        setProducts(data.products);
+        setTotpage(data.totpages);
+        setPage(data.page); 
     }
 
     useEffect(() => {
-      fetch(`/api/product/list?page=${page}`)
-      .then((response) => response?.json())
-      .then((json) => {
-         setProducts(json.products);
-         setTotpage(json.totpages);
-      });
+      fetchProducts(page);
    },[page]);
 
     const firstPage = (event: any) => {
