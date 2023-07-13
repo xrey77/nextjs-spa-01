@@ -6,7 +6,6 @@ const Productsearch = (props) => {
     const [message, setMessage] = useState("");
     let [searchkey, setSearchkey] = useState("");
     
-  
     const getProdsearch = async (event: any) => {
         event.preventDefault();                 
         setMessage("please wait .");
