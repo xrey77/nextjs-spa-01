@@ -127,10 +127,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:13.4.9, @next/swc-darwin-x64@npm:^13.4.7":
+"@next/swc-darwin-x64@npm:13.4.9":
   version: 13.4.9
   resolution: "@next/swc-darwin-x64@npm:13.4.9"
-  checksum: 857af6c92861cf81920c2a7fb7ad88d2468c601151ecfb9336b6f0db8d9b0bf60b389ebb9301b02872d11bd70c08c4c4cb57d1fd165acf6cec9ea1e4607a1397
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2797,7 +2796,6 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.4.0
     "@fortawesome/free-regular-svg-icons": ^6.4.0
     "@fortawesome/free-solid-svg-icons": ^6.4.0
-    "@next/swc-darwin-x64": ^13.4.7
     "@popperjs/core": ^2.11.6
     "@prisma/client": ^4.16.2
     "@types/bcryptjs": ^2.4.2

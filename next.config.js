@@ -1,12 +1,5 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-// }
-
-// module.exports = nextConfig
-
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   // content: [
   //   "./pages/**/*.{js,ts,jsx,tsx}",
   //   "./components/**/*.{js,ts,jsx,tsx}",
@@ -23,6 +16,16 @@ const nextConfig = {
           ? 'http://localhost:3000/api' // development api
           : 'http://localhost:3000/api' // production api
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000'
+      },
+    ],
+  },  
 }
 
 module.exports = nextConfig

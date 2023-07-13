@@ -65,7 +65,7 @@ const Login = ({}) => {
   <div className="modal-dialog modal-sm modal-dialog-centered">
     <div className="modal-content">
       <div className="modal-header bg-primary">
-        <h1 className="modal-title fs-5 text-white" id="staticLoginLabel">User's Signin</h1>
+        <h1 className="modal-title fs-5 text-white" id="staticLoginLabel">Users Signin</h1>
         <button onClick={closeLogin} type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">

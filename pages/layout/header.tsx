@@ -43,9 +43,9 @@ export default function Header({}) {
               <Link className="nav-link text-white active" href="/services">Services</Link>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
-              </a>
+              </Link>
               <ul className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/productlist">Sports Car</Link></li>
                 <li><Link className="dropdown-item" href="/productcatalog">Delivery Trucks</Link></li>
@@ -61,16 +61,16 @@ export default function Header({}) {
           {
             username != null ?
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {
                       profilepic != null ?
-                          <img src={profilepic} id="userpic1" className="user" alt='' />
+                          <Image src={profilepic} id="userpic1" className="user" alt='' />
                       : null
                   }
                   {username}
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
-                  <li><a onClick={logout} className="dropdown-item" href="/#">Logout</a></li>
+                  <li><Link onClick={logout} className="dropdown-item" href="/#">Logout</Link></li>
                   <li><Link className="dropdown-item" href="/profile">Profile</Link></li>
                   <li><hr className="dropdown-divider"/></li>
                   <li><Link className="dropdown-item" href="/#">Messenger</Link></li>
@@ -80,10 +80,10 @@ export default function Header({}) {
             :
             <>
             <li className="nav-item">
-                <a className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</a>
+                <Link className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</a>
+                <Link className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</Link>
             </li>
             </>
           }
@@ -113,9 +113,9 @@ export default function Header({}) {
           </li>
           <li className="nav-item"><hr/></li>
           <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Products
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/productlist">Sports Car</Link></li>
                   <li><hr className="dropdown-divider"/></li>
@@ -130,28 +130,28 @@ export default function Header({}) {
 
               <ul className="nav flex-column">
                 <li className="nav-item" data-bs-dismiss="offcanvas">
-                  <a className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</a>
+                  <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</Link>
                 </li>
                 <li className="nav-item"><hr/></li>
                 <li className="nav-item" data-bs-dismiss="offcanvas">
-                  <a className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</a>
+                  <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</Link>
                 </li>            
               </ul>
             :
 
             <ul className="navbar-nav mr-auto">
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {
                         profilepic != null ?
-                            <img src={profilepic} id="userpic1" className="user" alt='' />
+                            <Image src={profilepic} id="userpic1" className="user" alt='' />
                         : null
                     }
                     {username}
-                    </a>
+                    </Link>
                     <ul className="dropdown-menu">
                       <li data-bs-dismiss="offcanvas">
-                        <a onClick={logout} className="dropdown-item" href="/#">LogOut</a>
+                        <Link onClick={logout} className="dropdown-item" href="/#">LogOut</Link>
                       </li>
                       <li className="nav-item"><hr/></li>
                       <li data-bs-dismiss="offcanvas">
@@ -159,7 +159,7 @@ export default function Header({}) {
                       </li>
                       <li><hr className="dropdown-divider"/></li>
                       <li data-bs-dismiss="offcanvas">
-                        <a className="dropdown-item" href="/#">Messenger</a>                
+                        <Link className="dropdown-item" href="/#">Messenger</Link>
                       </li>
                     </ul>
                   </li>          

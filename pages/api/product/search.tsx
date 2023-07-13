@@ -13,11 +13,13 @@ export default async function search(req: NextApiRequest, res: NextApiResponse) 
                 },
             }
         })
+        if (product.length === 0) {
+            res.status(404).json({statuscode: 404, message: "Product Description not found."});    
+        }
         return res.status(200).json({statuscode: 200, message: 'Product has been retrieved.', product: product});
         
     } catch(e: any) {
-        console.log(e);
-        res.status(404).json({statuscode: 404, message: "Product Descipription not found."});    
+        res.status(404).json({statuscode: 404, message: e.message});    
     }    
     
 }

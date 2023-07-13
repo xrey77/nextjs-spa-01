@@ -1,29 +1,37 @@
-import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function productcatalog({}) {
-
+ const Productcatalog = (props) => {
     let [page, setPage] = useState(1);
     let [prods, setProds] = useState([]);
     let [totpage, setTotpage] = useState(null);
 
-    const fetchProducts = async (pg: any) => {
-       let response = await fetch(`http://localhost:3000/api/product/list?page=${page}`);
-       let data = await response.json();
-       setProds(data.products);
-       setTotpage(data.totpages);
-       setPage(data.page);
+    const fetchCatalog = async (pg: any) => {
+      await fetch(`http://localhost:3000/api/product/list?page=${page}`)
+      .then((response) => response.json())
+      .then((json) => {
+        setProds(json.products);
+        setTotpage(json.totpages);
+      });
     }
 
     useEffect(() => {
-        fetchProducts(page);
-    },[]);
+      fetch(`http://localhost:3000/api/product/list?page=${page}`)
+      .then((response) => response.json())
+      .then((json) => {
+        setProds(json.products);
+        setTotpage(json.totpages);
+        setPage(json.page);           
+      });
+
+    },[page]);
 
     const firstPage = (event: any) => {
         event.preventDefault();    
         page = 1;
         setPage(page);
-        fetchProducts(page);
+        fetchCatalog(page);
         return;    
       }
     
@@ -33,7 +41,7 @@ export default function productcatalog({}) {
             return;
         }
         setPage(page++);
-        fetchProducts(page);
+        fetchCatalog(page);
         return;
       }
     
@@ -43,7 +51,7 @@ export default function productcatalog({}) {
           return;
           }
           setPage(page--);
-          fetchProducts(page);
+          fetchCatalog(page);
           return;    
       }
     
@@ -51,20 +59,18 @@ export default function productcatalog({}) {
         event.preventDefault();
         page = totpage;
         setPage(page);
-        fetchProducts(page);
+        fetchCatalog(page);
         return;    
       }
-
 
     return(
     <div className="container mb-9">
             <h3 className='text-center'>Product Catalog</h3>
-
             <div className="card-group mb-3">
             {prods.map((item) => {
                     return (
-                    <div className="card">
-                        <img src={item['prod_pic']} className="card-img-top" alt=""/>
+                    <div key={item.id} className="card">
+                        <Image src={item['prod_pic']} className="card-img-top" alt="" width={200} height={200}/>
                         <div className="card-body">
                             <h5 className="card-title">Descriptions</h5>
                             <p className="card-text">{item['descriptions']}</p>
@@ -80,10 +86,10 @@ export default function productcatalog({}) {
         <div className='container'>
         <nav aria-label="Page navigation example">
         <ul className="pagination">
-          <li className="page-item"><a onClick={lastPage} className="page-link" href="/#">Last</a></li>
-          <li className="page-item"><a onClick={prevPage} className="page-link" href="/#">Previous</a></li>
-          <li className="page-item"><a onClick={nextPage} className="page-link" href="/#">Next</a></li>
-          <li className="page-item"><a onClick={firstPage} className="page-link" href="/#">First</a></li>
+          <li className="page-item"><Link onClick={lastPage} className="page-link" href="/#">Last</Link></li>
+          <li className="page-item"><Link onClick={prevPage} className="page-link" href="/#">Previous</Link></li>
+          <li className="page-item"><Link onClick={nextPage} className="page-link" href="/#">Next</Link></li>
+          <li className="page-item"><Link onClick={firstPage} className="page-link" href="/#">First</Link></li>
           <li className="page-item page-link text-danger">Page&nbsp;{page} of&nbsp;{totpage}</li>
         </ul>
       </nav>
@@ -94,3 +100,5 @@ export default function productcatalog({}) {
     </div>
     )
 }
+
+export default Productcatalog;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import $ from 'jquery/dist/jquery.slim';
+import Image from 'next/image'
 
-export default function profile({}) {
+export default function Profile({}) {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -216,7 +217,7 @@ export default function profile({}) {
                 </div>            
               </div>
               <div className='col'>
-                  <img id="userpic" className='user' src={profilepic} alt=''/>
+                  <Image id="userpic" className='user' src={profilepic} alt=''/>
                     <div className="mb-3 mt-2">
                       <input type="file" onChange={e => changeProfilepic(e)} className="form-control form-control-sm" id="profilepic"/>
                     </div>                                    
@@ -258,9 +259,9 @@ export default function profile({}) {
                   <div id="qcode">
                     {
                       qrcode != '' ?
-                        <img className='qrcode2' src={qrcode} alt='' />
+                        <Image className='qrcode2' src={qrcode} alt='' />
                     :
-                        <img className='qrcode1' src="http://localhost:3000/images/qrcode.png" alt='' />
+                        <Image className='qrcode1' src="http://localhost:3000/images/qrcode.png" alt='' />
                     }
                   </div>
               </div>
@@ -287,10 +288,7 @@ export default function profile({}) {
             </div>
 
             <button type='submit' className='btn btn-primary mt-3'>save</button>
-          </form>
-
-
-    
+          </form>    
         </div>
         <div className='card-footer text-danger'>
           {message}

@@ -1,23 +1,30 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react'
 
-export default function productlist({}) {
+const Productlist = (props) => {
 
     let [page, setPage] = useState(1);
     let [products, setProducts] = useState([]);
     let [totpage, setTotpage] = useState(null);
 
     const fetchProducts = async (pg: any) => {
-       let response = await fetch(`http://localhost:3000/api/product/list?page=${page}`);
-       let data = await response.json();
-       console.log(data);
-       setProducts(data.products);
-       setTotpage(data.totpages);
-       setPage(data.page);
+       await fetch(`http://localhost:3000/api/product/list?page=${page}`)
+       .then((response) => response.json())
+       .then((json) => {
+          setProducts(json.products);
+          setTotpage(json.totpages);
+          setPage(json.page); 
+       });
     }
 
     useEffect(() => {
-        fetchProducts(page);
-    },[]);
+      fetch(`http://localhost:3000/api/product/list?page=${page}`)
+      .then((response) => response.json())
+      .then((json) => {
+         setProducts(json.products);
+         setTotpage(json.totpages);
+      });
+   },[page]);
 
     const firstPage = (event: any) => {
         event.preventDefault();    
@@ -49,9 +56,7 @@ export default function productlist({}) {
     
       const lastPage = (event: any) => {
         event.preventDefault();
-        if (page === totpage) {
-          page = totpage;
-        }
+        page = totpage;
         setPage(page);
         fetchProducts(page);
         return;    
@@ -75,7 +80,7 @@ export default function productlist({}) {
 
             {products.map((item) => {
             return (
-              <tr>
+              <tr key={item.id}>
                  <td>{String(item['id']).substring(20,24)}</td>
                  <td>{item['descriptions']}</td>
                  <td>{item['qty']}</td>
@@ -91,10 +96,10 @@ export default function productlist({}) {
 
             <nav aria-label="Page navigation example">
         <ul className="pagination">
-          <li className="page-item"><a onClick={lastPage} className="page-link" href="/#">Last</a></li>
-          <li className="page-item"><a onClick={prevPage} className="page-link" href="/#">Previous</a></li>
-          <li className="page-item"><a onClick={nextPage} className="page-link" href="/#">Next</a></li>
-          <li className="page-item"><a onClick={firstPage} className="page-link" href="/#">First</a></li>
+          <li className="page-item"><Link onClick={lastPage} className="page-link" href="/#">Last</Link></li>
+          <li className="page-item"><Link onClick={prevPage} className="page-link" href="/#">Previous</Link></li>
+          <li className="page-item"><Link onClick={nextPage} className="page-link" href="/#">Next</Link></li>
+          <li className="page-item"><Link onClick={firstPage} className="page-link" href="/#">First</Link></li>
           <li className="page-item page-link text-danger">Page&nbsp;{page} of&nbsp;{totpage}</li>
 
         </ul>
@@ -103,3 +108,4 @@ export default function productlist({}) {
   </div>
   )
 }
+export default Productlist;
