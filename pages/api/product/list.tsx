@@ -16,17 +16,12 @@ export default async function list(req: NextApiRequest, res: NextApiResponse) {
         // let offset = (page -1) * perpage;
 
         let perpage: any = 5;
-        let offset: any = 0;
-        let totpage: any = 0;
-        let page: any = 0;
-        await prisma.product.findMany()
-        .then((recs) => recs?.json())
-        .then((json) => {
-            let totrecs: any = json.length;
-            totpage = Math.ceil(totrecs / perpage);
-            page = query?.page;
-            offset = (page -1) * perpage;
-        })
+        const response = await prisma.product.findMany();
+        let data = await response.json();
+        let totrecs: any = data.length;
+        let totpage: any = Math.ceil(totrecs / perpage);
+        let page: any = query?.page;
+        let offset: any = (page -1) * perpage;
 
         const products = await prisma.product.findMany({
             skip: offset,
