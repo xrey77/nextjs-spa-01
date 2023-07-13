@@ -191,11 +191,11 @@ a {
  }
 
  .carousel-control-prev-icon {
-  background-image: url("http://localhost:3000/images/left.png") !important;
+  background-image: url("https://nextjs-spa-01.vercel.app/images/left.png") !important;
 }
  
  .carousel-control-next-icon {
-   background-image: url("http://localhost:3000/images/right.png") !important;
+   background-image: url("https://nextjs-spa-01.vercel.app/images/right.png") !important;
  }
 
  .product-size {
