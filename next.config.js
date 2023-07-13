@@ -1,14 +1,14 @@
-const nextConfig = {
+// connectionString: "mongodb+srv://Reynald88:JesusLovesMe@cluster0.tdm0q.mongodb.net/Next13?retryWrites=true&w=majority",
+      const nextConfig = {
   reactStrictMode: false,
-  // content: [
-  //   "./pages/**/*.{js,ts,jsx,tsx}",
-  //   "./components/**/*.{js,ts,jsx,tsx}",
-  // ],
+  // exprimental: {
+  //   runtime: 'experimental-edge',
+  // },
   typescript: {
     ignoreBuildErrors: true,
   },
   serverRuntimeConfig: {
-      connectionString: "mongodb+srv://Reynald88:JesusLovesMe@cluster0.tdm0q.mongodb.net/Next13?retryWrites=true&w=majority",
+      connectionString: "mongodb+srv://Reynald88:JesusLovesMe@cluster0.tdm0q.mongodb.net/Next13",
       secret: '7bbc21c9826d9d54a4282aacbe9812f32a1dd1148d9be7246c7cecd7b3157b79c76144eea49b12bb4958db055e53a663d4695863ae73556abc47148d247b3830'
   },
   publicRuntimeConfig: {
