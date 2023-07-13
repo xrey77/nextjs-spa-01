@@ -8,7 +8,7 @@ const Productlist = (props) => {
     let [totpage, setTotpage] = useState(null);
 
     const fetchProducts = async (pg: any) => {
-       await fetch(`/product/list?page=${page}`)
+       await fetch(`/api/product/list?page=${page}`)
        .then((response) => response.json())
        .then((json) => {
           setProducts(json.products);
@@ -18,12 +18,13 @@ const Productlist = (props) => {
     }
 
     useEffect(() => {
-      fetch(`/product/list?page=${page}`)
-      .then((response) => response.json())
-      .then((json) => {
-         setProducts(json.products);
-         setTotpage(json.totpages);
-      });
+      // fetch(`/api/product/list?page=${page}`)
+      // .then((response) => response.json())
+      // .then((json) => {
+      //    setProducts(json.products);
+      //    setTotpage(json.totpages);
+      // });
+      fetchProducts(page);
    },[page]);
 
     const firstPage = (event: any) => {
