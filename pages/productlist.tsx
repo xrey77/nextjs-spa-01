@@ -8,7 +8,7 @@ const Productlist = (props) => {
     let [totpage, setTotpage] = useState(null);
 
     const fetchProducts = async (pg: any) => {
-       await fetch(`https://nextjs-spa-01.vercel.app/api/product/list?page=${page}`)
+       await fetch(`/api/product/list?page=${page}`)
        .then((response) => response.json())
        .then((json) => {
           setProducts(json.products);
@@ -18,7 +18,7 @@ const Productlist = (props) => {
     }
 
     useEffect(() => {
-      fetch(`https://nextjs-spa-01.vercel.app/api/product/list?page=${page}`)
+      fetch(`/api/product/list?page=${page}`)
       .then((response) => response.json())
       .then((json) => {
          setProducts(json.products);
