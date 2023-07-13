@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react'
 
-const Productlist = () => {
+const Productlist = (props) => {
 
     let [page, setPage] = useState(1);
     let [products, setProducts] = useState([]);
@@ -9,7 +9,7 @@ const Productlist = () => {
 
     const fetchProducts = async (pg: any) => {
        await fetch(`/api/product/list?page=${page}`)
-       .then((response) => response.json())
+       .then((response) => response?.json())
        .then((json) => {
           setProducts(json.products);
           setTotpage(json.totpages);
@@ -19,7 +19,7 @@ const Productlist = () => {
 
     useEffect(() => {
       fetch(`/api/product/list?page=${page}`)
-      .then((response) => response.json())
+      .then((response) => response?.json())
       .then((json) => {
          setProducts(json.products);
          setTotpage(json.totpages);
@@ -78,7 +78,7 @@ const Productlist = () => {
             </thead>
             <tbody>
 
-            {products.map((item) => {
+            {products?.map((item) => {
             return (
               <tr key={item.id}>
                  <td>{String(item['id']).substring(20,24)}</td>
