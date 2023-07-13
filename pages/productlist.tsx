@@ -8,7 +8,7 @@ const Productlist = (props) => {
     let [totpage, setTotpage] = useState(null);
 
     const fetchProducts = async (pg: any) => {
-       const response = await fetch(`/api/product/list?page=${page}`);
+       const response = await fetch(`/api/product/list?page=${pg}`);
        let data = await response.json();
         setProducts(data.products);
         setTotpage(data.totpages);
