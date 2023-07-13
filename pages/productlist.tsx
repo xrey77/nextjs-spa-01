@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react'
 
-const Productlist = (props) => {
+const Productlist = () => {
 
     let [page, setPage] = useState(1);
     let [products, setProducts] = useState([]);
@@ -18,13 +18,12 @@ const Productlist = (props) => {
     }
 
     useEffect(() => {
-      // fetch(`/api/product/list?page=${page}`)
-      // .then((response) => response.json())
-      // .then((json) => {
-      //    setProducts(json.products);
-      //    setTotpage(json.totpages);
-      // });
-      fetchProducts(page);
+      fetch(`/api/product/list?page=${page}`)
+      .then((response) => response.json())
+      .then((json) => {
+         setProducts(json.products);
+         setTotpage(json.totpages);
+      });
    },[page]);
 
     const firstPage = (event: any) => {
