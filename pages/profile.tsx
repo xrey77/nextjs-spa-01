@@ -261,7 +261,7 @@ export default function Profile({}) {
                       qrcode != '' ?
                         <Image className='qrcode2' src={qrcode} alt='' />
                     :
-                        <Image className='qrcode1' src="http://localhost:3000/images/qrcode.png" alt='' />
+                        <Image className='qrcode1' src="https://nextjs-spa-01-2ahu2tubm-xrey77.vercel.app/images/qrcode.png" alt='' />
                     }
                   </div>
               </div>

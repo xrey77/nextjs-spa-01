@@ -7,7 +7,7 @@ export default async function deletebyid(req: NextApiRequest, res: NextApiRespon
     try {
         const user = await prisma.user.delete({
             where: {
-                id: query.id.toString()
+                id: query.id || ''
             }
         })
         res.status(200).json({statuscode: 200, message: "User ID has been deleted."})

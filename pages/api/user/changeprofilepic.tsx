@@ -18,7 +18,7 @@ const readFile = async (req: NextApiRequest, saveLocally?: boolean) => {
   if(saveLocally) {
     options.uploadDir = path.join(process.cwd(), "/public/users");
     let xfile = query.id + ".jpeg";
-    let urlimg = "http://localhost:3000/users/"+xfile;
+    let urlimg = "https://nextjs-spa-01-2ahu2tubm-xrey77.vercel.app/users/"+xfile;
     try {
       await prisma.user.update({
         where: {
