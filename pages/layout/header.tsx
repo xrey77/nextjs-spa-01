@@ -167,6 +167,12 @@ export default function Header({}) {
 
             <li className="nav-item"><hr/></li>
             </ul>
+            
+            <li className="nav-item" data-bs-dismiss="offcanvas">
+              <Link className="nav-link text-white active" href="/contactus">Contact Us</Link>
+            </li>
+            <li className="nav-item"><hr/></li>
+
             { 
               username != null ? (
                 <ul className="navbar-nav mr-auto">              
