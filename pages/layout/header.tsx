@@ -32,11 +32,13 @@ export default function Header({}) {
 
   const servicesDropleave = (e: any) => {
       e.preventDefault();
+      $('#nav2b').hide();
         $('.dropdown-menu').hide();
   }
 
   const productDropdown = (e: any) => {
     e.preventDefault();
+    $('#nav1b').hide();
     $('#nav2b').show();
   }
 
