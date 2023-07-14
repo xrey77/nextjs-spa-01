@@ -62,10 +62,10 @@ export default function Header({}) {
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link onMouseEnter={servicesDropdown} onMouseLeave={servicesDropleave} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={servicesDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
-              <ul id="nav1b" className="dropdown-menu">
+              <ul id="nav1b" onMouseLeave={servicesDropleave} className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
                 <li><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
                 <li><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
@@ -81,10 +81,10 @@ export default function Header({}) {
             </li>
 
             <li className="nav-item dropdown">
-              <Link onMouseEnter={productDropdown} onMouseLeave={productDropleave}  className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={productDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
               </Link>
-              <ul id="nav2b" className="dropdown-menu">
+              <ul id="nav2b" onMouseLeave={productDropleave}  className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/productlist">Sports Car</Link></li>
                 <li><Link className="dropdown-item" href="/productcatalog">Delivery Trucks</Link></li>
                 <li><hr className="dropdown-divider"/></li>
