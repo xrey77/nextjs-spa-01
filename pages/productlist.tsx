@@ -10,7 +10,6 @@ const Productlist = (props) => {
     const fetchProducts = async (pg: any) => {
        const response = await fetch(`/api/product/list?page=${pg}`);
        let data = await response.json();
-       console.log(data);
         setProducts(data.products);
         setTotpage(data.totpages);
         setPage(data.page); 

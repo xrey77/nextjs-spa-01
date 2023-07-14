@@ -59,7 +59,7 @@ export default function Header({}) {
           </ul>
           <ul className="navbar-nav mr-auto">
           {
-            username != null ?
+            username !== null ? (            
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {
@@ -76,8 +76,7 @@ export default function Header({}) {
                   <li><Link className="dropdown-item" href="/#">Messenger</Link></li>
                 </ul>
               </li>
-
-            :
+            ) : (
             <>
             <li className="nav-item">
                 <Link className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</Link>
@@ -86,6 +85,7 @@ export default function Header({}) {
                 <Link className="nav-link text-white active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</Link>
             </li>
             </>
+            )
           }
         </ul>
 
@@ -126,20 +126,9 @@ export default function Header({}) {
               </li>
               <li className="nav-item"><hr/></li>
             </ul>
-            { username === null ?
-
-              <ul className="nav flex-column">
-                <li className="nav-item" data-bs-dismiss="offcanvas">
-                  <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</Link>
-                </li>
-                <li className="nav-item"><hr/></li>
-                <li className="nav-item" data-bs-dismiss="offcanvas">
-                  <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</Link>
-                </li>            
-              </ul>
-            :
-
-            <ul className="navbar-nav mr-auto">
+            { 
+              username !== null ? (
+                <ul className="navbar-nav mr-auto">              
                   <li className="nav-item dropdown">
                     <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {
@@ -164,8 +153,19 @@ export default function Header({}) {
                     </ul>
                   </li>          
                   <li className="nav-item"><hr/></li>                                        
-        </ul>        
-        }
+                </ul>                    
+              ) : (
+                  <ul className="nav flex-column">
+                    <li className="nav-item" data-bs-dismiss="offcanvas">
+                      <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticLogin">Login</Link>
+                    </li>
+                    <li className="nav-item"><hr/></li>
+                    <li className="nav-item" data-bs-dismiss="offcanvas">
+                      <Link className="nav-link active" href="/#" data-bs-toggle="modal" data-bs-target="#staticRegister">Register</Link>
+                    </li>            
+                  </ul>
+              )    
+            }
 
 
       </div>
