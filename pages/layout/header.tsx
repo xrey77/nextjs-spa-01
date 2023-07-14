@@ -26,7 +26,7 @@ export default function Header({}) {
   }
 
   const servicesDropdown = () => {
-        $('#nav1a').show();
+        $('#nav1a').click();
   }
 
   const servicesDropleave = () => {
