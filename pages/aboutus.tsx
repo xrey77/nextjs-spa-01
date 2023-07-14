@@ -1,10 +1,12 @@
 import styles from '../styles/Home.module.css'
 
-export default function Aboutus(props) {
+const Aboutus = () => {
     return(
         <main className={styles.main}>
            <h1>About Us Page</h1>
-           <p>Under Construction</p>
+           <div><p className="text-center">Under Construction</p></div>
         </main>
     )
 }
+
+export default Aboutus;

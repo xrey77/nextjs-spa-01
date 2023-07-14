@@ -1,10 +1,12 @@
 import styles from '../styles/Home.module.css'
 
-export default function Services(props) {
+const Services = () => {
     return(
         <main className={styles.main}>
            <h1>Services Page</h1>
-           <p>Under Construction</p>
+           <div><p className="text-center">Under Construction</p></div>
         </main>
     )
 }
+
+export default Services;
