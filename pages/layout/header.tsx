@@ -5,6 +5,7 @@ import bar from '../../public/images/bar.png'
 import Login from '../components/auth/Login'
 import Register from '../components/auth/Register'
 import { useEffect, useState } from 'react'
+import $ from 'jquery';
 
 export default function Header({}) {
   const key = 'USERNAME';
@@ -24,6 +25,16 @@ export default function Header({}) {
     window.location.href="/";
   }
 
+  $(document).ready(function (){    
+    $("#nav1a").mouseover(function() {
+        $('.dropdown-menu').show();
+    });
+
+    $("#nav1b").mouseleave(function() {
+        $('.dropdown-menu').hide();
+    });
+});
+
   return(
     <div>
     <nav className="navbar navbar-expand-lg bgx">
@@ -40,10 +51,10 @@ export default function Header({}) {
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link id="nav1a" className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
-              <ul className="dropdown-menu">
+              <ul id="nav1b" className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
                 <li><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
                 <li><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
