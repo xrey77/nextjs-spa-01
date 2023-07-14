@@ -27,6 +27,7 @@ export default function Header({}) {
 
   const servicesDropdown = (e: any) => {
     e.preventDefault();
+    $('#nav2b').hide();
     $('#nav1b').show();
   }
 
