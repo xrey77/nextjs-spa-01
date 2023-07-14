@@ -217,7 +217,7 @@ export default function Profile({}) {
                 </div>            
               </div>
               <div className='col'>
-                  <Image id="userpic" className='user' src={profilepic} alt=''/>
+                  <Image id="userpic" className='userprofile' src={profilepic} alt=''/>
                     <div className="mb-3 mt-2">
                       <input type="file" onChange={e => changeProfilepic(e)} className="form-control form-control-sm" id="profilepic"/>
                     </div>                                    
