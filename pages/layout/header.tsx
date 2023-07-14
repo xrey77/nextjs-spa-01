@@ -166,13 +166,13 @@ export default function Header({}) {
             </li>
 
             <li className="nav-item"><hr/></li>
-            </ul>
-            
             <li className="nav-item" data-bs-dismiss="offcanvas">
               <Link className="nav-link active" aria-current="page" href="/contactus">Contact Us</Link>
             </li>
             <li className="nav-item"><hr/></li>
 
+            </ul>
+            
             { 
               username != null ? (
                 <ul className="navbar-nav mr-auto">              
