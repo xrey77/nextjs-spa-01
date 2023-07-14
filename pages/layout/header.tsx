@@ -31,6 +31,11 @@ export default function Header({}) {
     $('#nav1b').show();
   }
 
+  const servicesDropdownHide = (e: any) => {
+    e.preventDefault();
+    $('#nav1b').hide();
+  }
+
   const servicesDropleave = (e: any) => {
       e.preventDefault();
       $('#nav2b').hide();
@@ -44,6 +49,11 @@ export default function Header({}) {
     $('#nav2b').show();
   }
 
+  const productDropdownHide = (e: any) => {
+    e.preventDefault();
+    $('#nav2b').hide();
+  }
+  
   const productDropleave = (e: any) => {
       e.preventDefault();
       $('#nav2b').hide();
@@ -67,7 +77,7 @@ export default function Header({}) {
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link onMouseEnter={servicesDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={servicesDropdown} onMouseLeave={servicesDropdownHide} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
               <ul id="nav1b" onMouseLeave={servicesDropleave} className="dropdown-menu">
@@ -86,10 +96,10 @@ export default function Header({}) {
             </li>
 
             <li className="nav-item dropdown">
-              <Link onMouseEnter={productDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={productDropdown} onMouseLeave={productDropdownHide} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
               </Link>
-              <ul id="nav2b" onMouseLeave={productDropleave}  className="dropdown-menu">
+              <ul id="nav2b" onMouseLeave={productDropleave} className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/productlist">Sports Car</Link></li>
                 <li><Link className="dropdown-item" href="/productcatalog">Delivery Trucks</Link></li>
                 <li><hr className="dropdown-divider"/></li>
