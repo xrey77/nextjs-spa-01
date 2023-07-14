@@ -32,7 +32,7 @@ export default function Header({}) {
 
   const servicesDropleave = (e: any) => {
       e.preventDefault();
-        $('#nav2b').hide();
+        $('.dropdown-menu').hide();
   }
 
   const productDropdown = (e: any) => {
@@ -42,7 +42,7 @@ export default function Header({}) {
 
   const productDropleave = (e: any) => {
       e.preventDefault();
-        $('#nav2b').hide();
+        $('.dropdown-menu').hide();
   }
 
 
@@ -62,7 +62,7 @@ export default function Header({}) {
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link id="nav1a" onMouseEnter={servicesDropdown} onMouseLeave={servicesDropleave} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={servicesDropdown} onMouseLeave={servicesDropleave} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
               <ul id="nav1b" className="dropdown-menu">
