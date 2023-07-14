@@ -5,7 +5,7 @@ import bar from '../../public/images/bar.png'
 import Login from '../components/auth/Login'
 import Register from '../components/auth/Register'
 import { useEffect, useState } from 'react'
-import $ from 'jquery';
+import $ from 'jquery/dist/jquery.slim';
 
 export default function Header({}) {
   const key = 'USERNAME';
@@ -27,13 +27,24 @@ export default function Header({}) {
 
   const servicesDropdown = (e: any) => {
     e.preventDefault();
-    $('.dropdown-menu').show();
+    $('#nav1b').show();
   }
 
   const servicesDropleave = (e: any) => {
       e.preventDefault();
-        $('.dropdown-menu').hide();
+        $('#nav2b').hide();
   }
+
+  const productDropdown = (e: any) => {
+    e.preventDefault();
+    $('#nav2b').show();
+  }
+
+  const productDropleave = (e: any) => {
+      e.preventDefault();
+        $('#nav2b').hide();
+  }
+
 
   return(
     <div>
@@ -54,7 +65,7 @@ export default function Header({}) {
               <Link id="nav1a" onMouseEnter={servicesDropdown} onMouseLeave={servicesDropleave} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
-              <ul id="nav1b"  className="dropdown-menu">
+              <ul id="nav1b" className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
                 <li><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
                 <li><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
@@ -70,10 +81,10 @@ export default function Header({}) {
             </li>
 
             <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={productDropdown} onMouseLeave={productDropleave}  className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
               </Link>
-              <ul className="dropdown-menu">
+              <ul id="nav2b" className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/productlist">Sports Car</Link></li>
                 <li><Link className="dropdown-item" href="/productcatalog">Delivery Trucks</Link></li>
                 <li><hr className="dropdown-divider"/></li>
