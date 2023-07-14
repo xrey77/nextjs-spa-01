@@ -34,7 +34,8 @@ export default function Header({}) {
   const servicesDropleave = (e: any) => {
       e.preventDefault();
       $('#nav2b').hide();
-        $('.dropdown-menu').hide();
+      $('#nav1b').hide();
+      $('.dropdown-menu').hide();
   }
 
   const productDropdown = (e: any) => {
@@ -45,7 +46,8 @@ export default function Header({}) {
 
   const productDropleave = (e: any) => {
       e.preventDefault();
-        $('.dropdown-menu').hide();
+      $('#nav2b').hide();
+      $('.dropdown-menu').hide();
   }
 
 
