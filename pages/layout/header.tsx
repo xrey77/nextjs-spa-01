@@ -74,10 +74,10 @@ export default function Header({}) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
+              <Link  onMouseLeave={servicesDropdownHide} className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link onMouseEnter={servicesDropdown} onMouseLeave={servicesDropdownHide} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={servicesDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
               <ul id="nav1b" onMouseLeave={servicesDropleave} className="dropdown-menu">
@@ -96,7 +96,7 @@ export default function Header({}) {
             </li>
 
             <li className="nav-item dropdown">
-              <Link onMouseEnter={productDropdown} onMouseLeave={productDropdownHide} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link onMouseEnter={productDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
               </Link>
               <ul id="nav2b" onMouseLeave={productDropleave} className="dropdown-menu">
@@ -107,7 +107,7 @@ export default function Header({}) {
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white active" href="/contactus">Contact Us</Link>
+              <Link onMouseLeave={productDropdownHide} className="nav-link text-white active" href="/contactus">Contact Us</Link>
             </li>
           </ul>
           <ul className="navbar-nav mr-auto">
