@@ -39,9 +39,25 @@ export default function Header({}) {
             <li className="nav-item">
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white active" href="/services">Services</Link>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </Link>
+              <ul className="dropdown-menu">
+                <li><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
+                <li><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
+                <li><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
+                <li><Link className="dropdown-item" href="/services">New tires</Link></li>
+                <li><Link className="dropdown-item" href="/services">Battery replacement</Link></li>
+                <li><Link className="dropdown-item" href="/services">Brake work</Link></li>
+                <li><Link className="dropdown-item" href="/services">Antifreeze added</Link></li>
+                <li><Link className="dropdown-item" href="/services">Wheels aligned/balanced</Link></li>
+                <li><hr className="dropdown-divider"/></li>
+                <li><Link className="dropdown-item" href="/services">Scheduled maintenance</Link></li>
+                <li><Link className="dropdown-item" href="/services">Engine tune-up</Link></li>
+              </ul>
             </li>
+
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Products
@@ -108,9 +124,33 @@ export default function Header({}) {
             <Link className="nav-link active" aria-current="page" href="/aboutus">About Us</Link>
           </li>
           <li className="nav-item"><hr/></li>
-          <li className="nav-item" data-bs-dismiss="offcanvas">
-              <Link className="nav-link active" href="/services">Services</Link>
-          </li>
+          <li className="nav-item dropdown">
+                <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </Link>
+                <ul className="dropdown-menu">
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">New tires</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Battery replacement</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Brake work</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Antifreeze added</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Wheels aligned/balanced</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Scheduled maintenance</Link></li>
+                  <li><hr className="dropdown-divider"/></li>
+                  <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/services">Engine tune-up</Link></li>
+                </ul>
+            </li>
+
           <li className="nav-item"><hr/></li>
           <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -123,8 +163,9 @@ export default function Header({}) {
                   <li><hr className="dropdown-divider"/></li>
                   <li data-bs-dismiss="offcanvas"><Link className="dropdown-item" href="/productsearch">Auto Spare Parts</Link></li>
                 </ul>
-              </li>
-              <li className="nav-item"><hr/></li>
+            </li>
+
+            <li className="nav-item"><hr/></li>
             </ul>
             { 
               username != null ? (
