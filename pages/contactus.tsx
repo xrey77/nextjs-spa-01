@@ -1,9 +1,14 @@
 import styles from '../styles/Home.module.css'
 
-export default function Contactus() {
+const Contactus = (props) => {
     return(
         <main className={styles.main}>
-           <h1>Contact Us Page</h1>
+            <div>
+                <h1>Contact Us Page</h1>
+                <p className='text-center'>Under Construction</p>
+           </div>
         </main>
     )
 }
+
+export default Contactus;
