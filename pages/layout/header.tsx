@@ -25,12 +25,14 @@ export default function Header({}) {
     window.location.href="/";
   }
 
-  const servicesDropdown = () => {
-        $('#nav1a').click();
+  const servicesDropdown = (e: any) => {
+    e.preventDefault();
+    $('.dropdown-menu').show();
   }
 
-  const servicesDropleave = () => {
-        $('#nav1b').hide();
+  const servicesDropleave = (e: any) => {
+      e.preventDefault();
+        $('.dropdown-menu').hide();
   }
 
   return(
@@ -49,10 +51,10 @@ export default function Header({}) {
               <Link className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
-              <Link id="nav1a" onMouseUp={servicesDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link id="nav1a" onMouseEnter={servicesDropdown} onMouseLeave={servicesDropleave} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </Link>
-              <ul id="nav1b" onMouseLeave={servicesDropleave}  className="dropdown-menu">
+              <ul id="nav1b"  className="dropdown-menu">
                 <li><Link className="dropdown-item" href="/services">Oil/oil filter changed</Link></li>
                 <li><Link className="dropdown-item" href="/services">Wiper blades replacement</Link></li>
                 <li><Link className="dropdown-item" href="/services">Replace air filter</Link></li>
