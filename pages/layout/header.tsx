@@ -74,7 +74,7 @@ export default function Header({}) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link  onMouseLeave={servicesDropdownHide} className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
+              <Link  onMouseEnter={servicesDropdownHide} className="nav-link active text-white" aria-current="page" href="/aboutus">About Us</Link>
             </li>
             <li className="nav-item dropdown">
               <Link onMouseEnter={servicesDropdown} className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,7 +107,7 @@ export default function Header({}) {
               </ul>
             </li>
             <li className="nav-item">
-              <Link onMouseLeave={productDropdownHide} className="nav-link text-white active" href="/contactus">Contact Us</Link>
+              <Link onMouseEnter={productDropdownHide} className="nav-link text-white active" href="/contactus">Contact Us</Link>
             </li>
           </ul>
           <ul className="navbar-nav mr-auto">
