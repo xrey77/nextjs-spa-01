@@ -169,7 +169,7 @@ export default function Header({}) {
             </ul>
             
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <Link className="nav-link text-white active" href="/contactus">Contact Us</Link>
+              <Link className="nav-link active" aria-current="page" href="/contactus">Contact Us</Link>
             </li>
             <li className="nav-item"><hr/></li>
 
