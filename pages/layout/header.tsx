@@ -59,7 +59,7 @@ export default function Header({}) {
           </ul>
           <ul className="navbar-nav mr-auto">
           {
-            username !== null ? (            
+            username != null ? (            
               <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-white active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {
@@ -127,7 +127,7 @@ export default function Header({}) {
               <li className="nav-item"><hr/></li>
             </ul>
             { 
-              username !== null ? (
+              username != null ? (
                 <ul className="navbar-nav mr-auto">              
                   <li className="nav-item dropdown">
                     <Link className="nav-link dropdown-toggle active" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
