@@ -120,9 +120,6 @@ export default function Profile({}) {
       body: formdata,
       method: "post",
     }).then(async (result) => {
-      // headers: {
-      //   'content-type': "application/x-www-form-urlencoded;multipart/form-data;",
-      // },
 
       let data = await result.json()
       if (data.statuscode == 200) {
